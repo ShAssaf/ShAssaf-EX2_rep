@@ -24,7 +24,7 @@ public class Main {
 			choice = Memory.in.nextLine();
 			switch(choice) {
 				case("1"):		//PhoneBook
-					phonebookApp.menu();		//TODO - Shlomo check if the phone is valid
+					phonebookApp.menu();		//Done - Shlomo check if the phone is valid
 					break;
 				case("2"):		//SMS
 					smsApp.menu();
