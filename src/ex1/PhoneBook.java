@@ -15,15 +15,27 @@ public class PhoneBook {
 	//input - name , phone number
 	//output - None
 	
-	public void add_contact(String name,String phone_num) {			
-		Contacts contact = new Contacts(name, phone_num);
-		phonebook.add(contact);
+	public void add_contact(String name,String phone_num) {
+		if (is_valid_number(phone_num)) {
+			Contacts contact = new Contacts(name, phone_num);
+			phonebook.add(contact);}
+		else System.out.println("sorry invalid phone number please retry again");
+	}
+	
+	//___________is_valid_number___________
+	//input - Contact(phone number)
+	//output - True or false
+
+	private boolean is_valid_number(String phone_num) {
+		return (phone_num.matches("[0-9]+"));
+
 	}
 	
 	//___________add_all_the_contacts_from_Contacts_list___________
 	//input - Contact(name , phone number)
 	//output - None
 	
+
 	private void add_contact_from_list(Contacts[] contacts) {			
 		for (int i=0;i<contacts.length;i++) {	
 			this.add_contact(contacts[i].get_name(),contacts[i].get_phone_num());
