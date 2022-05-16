@@ -18,6 +18,7 @@ public class Main {
 		String choice = new String();				//the choice that the user will make
 		PhoneBookApp phonebookApp = new PhoneBookApp();
 		SMSApp smsApp = new SMSApp();
+		MediaPlayer mediaPlayer = new MediaPlayer();
 		//the Program
 		while(choice.compareTo("5") != 0) {		//compareTo return 0 if true
 			print_menu();
@@ -33,7 +34,7 @@ public class Main {
 					//Ariel
 					break;
 				case("4"):		//Media Player
-					//Shlomo
+					mediaPlayer.menu();
 					break;
 				case("5"):		//exit program
 					System.out.println("good bye!");

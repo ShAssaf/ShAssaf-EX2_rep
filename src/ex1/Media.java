@@ -1,8 +1,5 @@
 package ex1;
 
-import java.io.*;
-import java.util.*;
-
 public class Media {
 	private int lenght_sec;
 	private String lenght_string;
@@ -47,11 +44,9 @@ public class Media {
 	}
 }
 
-class Viedo extends Media {
-	
-	
-}
-class Music extends Media {
-	
-}
+
+
+
+
+
 
