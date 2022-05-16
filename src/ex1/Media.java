@@ -10,7 +10,7 @@ public class Media {
 	
 	
 	
-	public void media_printer() {
+	public void media_player() {
 		System.out.println(String.format("%s is now playing for %s time",this.get_media_name(),this.get_lengh()));
 	}
 	//--------------Setters--------------
