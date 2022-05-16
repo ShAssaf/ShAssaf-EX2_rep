@@ -1,9 +1,6 @@
 package ex1;
 
 
-import ex1.Video;
-import ex1.Music;
-
 public class MediaPlayer implements App {
 
 	
@@ -11,6 +8,7 @@ public class MediaPlayer implements App {
 	public void menu() {
 		//variable
 		String choice = "0";				//the choice that the user will make
+		String choice1 = "0";
 		String name = new String();	
 		int lenght ;
 		//the Program
@@ -25,31 +23,33 @@ public class MediaPlayer implements App {
 					System.out.println("enter media lenght (in sec)");					
 					lenght = Memory.in.nextInt();
 					System.out.println("which media do you wish to add: video('v') or music ('m')\npls enter your choise");
-					choice = Memory.in.nextLine();
-					switch(choice) {
+					choice1 = Memory.in.nextLine();
+					choice1 = Memory.in.nextLine();
+					switch(choice1) {
 						case("v"):
 							Video vid = new Video(name,lenght);
 							Memory.mediaMem.addToMem(vid);
+							break;
 						case("m"):
 							Music mus = new Music(name, lenght);
 							Memory.mediaMem.addToMem(mus);
+							break;}
+					break;
 							
-						default:		//if the user chose anything other than 1 - 11 (including letters)
-							System.out.println("illigel choice please choose again");
-						break;
 				case("2"):		//remove
 					System.out.println("enter name of media to stream ");
 					name = Memory.in.nextLine();
-					for(int i=0;i<Memory.mediaMem.mediaSize;i++) {
+					for(int i=0;i<Memory.mediaMem.mediaSize;) {
 						if (Memory.mediaMem.media_mem[i].get_media_name() == name ) {
 							Memory.mediaMem.media_mem[i].media_player();
+							break;
 						}
-						break;
+						
 					}
 					break;
 				case("3"):		//print
 					System.out.println("print all medias: ");
-					for(int i=0;i<Memory.mediaMem.mediaSize;i++) {
+					for(int i=0;i<Memory.mediaMem.nextEmpty;i++) {
 						Memory.mediaMem.media_mem[i].media_player();
 					}
 					break;
@@ -57,7 +57,10 @@ public class MediaPlayer implements App {
 					System.out.println("good bye!");
 					break;
 
-					}
+					
+				default:		//if the user chose anything other than 1 - 11 (including letters)
+					System.out.println("illigel choice please choose again");
+					break;
 			}
 		}
 		

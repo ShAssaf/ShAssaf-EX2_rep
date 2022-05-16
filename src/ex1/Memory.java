@@ -39,9 +39,10 @@ class MediaMemory{
 				newMeida[i] = media_mem[i];
 				media_mem = newMeida;
 			}
-			media_mem[nextEmpty] = mediaToAdd;
-			nextEmpty++;
 		}
+		media_mem[nextEmpty] = mediaToAdd;
+		nextEmpty++;
+		
 	}
 }
 
