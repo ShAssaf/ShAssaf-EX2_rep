@@ -8,7 +8,7 @@ public class MediaPlayer implements App {
 	public void menu() {
 		//variable
 		String choice = "0";				//the choice that the user will make
-		String choice1 = "0";
+		String medType = "0";
 		String name = new String();	
 		int lenght ;
 		//the Program
@@ -22,26 +22,26 @@ public class MediaPlayer implements App {
 					name = Memory.in.nextLine();
 					System.out.println("enter media lenght (in sec)");					
 					lenght = Memory.in.nextInt();
+					Memory.in.nextLine();
 					System.out.println("which media do you wish to add: video('v') or music ('m')\npls enter your choise");
-					choice1 = Memory.in.nextLine();
-					choice1 = Memory.in.nextLine();
-					switch(choice1) {
+					medType = Memory.in.nextLine();
+					switch(medType) {
 						case("v"):
 							Video vid = new Video(name,lenght);
-							Memory.mediaMem.addToMem(vid);
+							Memory.media.addToMem(vid);
 							break;
 						case("m"):
 							Music mus = new Music(name, lenght);
-							Memory.mediaMem.addToMem(mus);
+							Memory.media.addToMem(mus);
 							break;}
 					break;
 							
 				case("2"):		//remove
 					System.out.println("enter name of media to stream ");
 					name = Memory.in.nextLine();
-					for(int i=0;i<Memory.mediaMem.mediaSize;) {
-						if (Memory.mediaMem.media_mem[i].get_media_name() == name ) {
-							Memory.mediaMem.media_mem[i].media_player();
+					for(int i=0;i<Memory.media.mediaSize;) {
+						if (Memory.media.mediaArr[i].get_media_name() == name ) {
+							Memory.media.mediaArr[i].media_player();
 							break;
 						}
 						
@@ -49,8 +49,8 @@ public class MediaPlayer implements App {
 					break;
 				case("3"):		//print
 					System.out.println("print all medias: ");
-					for(int i=0;i<Memory.mediaMem.nextEmpty;i++) {
-						Memory.mediaMem.media_mem[i].media_player();
+					for(int i=0;i<Memory.media.nextEmpty;i++) {
+						Memory.media.mediaArr[i].media_player();
 					}
 					break;
 				case("4"):		//search
