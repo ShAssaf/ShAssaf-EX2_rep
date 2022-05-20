@@ -1,4 +1,4 @@
-package ex1;
+package Ex2;
 
 public class SMSApp implements App{
 		
@@ -24,7 +24,7 @@ public class SMSApp implements App{
 		String name = new String();	
 		SMS sms = Memory.sms;
 		
-		sms.refreshPB();
+//		sms.refreshPB();
 		
 		//the Program
 		while (choice.compareTo("6") != 0)

@@ -1,4 +1,4 @@
-package ex1;
+package Ex2;
 
 import java.util.Scanner;
 
@@ -19,15 +19,18 @@ public class Memory {
 	static PhoneBook phonebook = new PhoneBook();
 	
 	static SMS sms = new SMS(phonebook);
-	static MediaMemory mediaMem = new MediaMemory();
+	
+	static Calendar calendar= new Calendar();
+	
+	static MediaMemory media = new MediaMemory();
 
 }
 
 class MediaMemory{
 	
 	int nextEmpty = 0;
-	int mediaSize = 4;
-	Media[] media_mem = new Media[this.mediaSize];
+	int mediaSize = 1;
+	Media[] mediaArr = new Media[this.mediaSize];
 	
 	boolean isFull() {
 		return (this.nextEmpty==this.mediaSize);
@@ -36,13 +39,12 @@ class MediaMemory{
 		if (isFull()) {
 			Media[] newMeida = new Media[mediaSize*2];
 			for (int i=0;i<mediaSize;i++) {
-				newMeida[i] = media_mem[i];
-				media_mem = newMeida;
+				newMeida[i] = mediaArr[i];
+				mediaArr = newMeida;
 			}
 		}
-		media_mem[nextEmpty] = mediaToAdd;
+		mediaArr[nextEmpty] = mediaToAdd;
 		nextEmpty++;
 		
 	}
 }
-

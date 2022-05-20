@@ -1,4 +1,4 @@
-package ex1;
+package Ex2;
 
 import java.io.*;
 import java.util.*;
@@ -102,13 +102,18 @@ public class PhoneBook {
 	//input - name
 	//output - None
 	
-	public void remove_contact(String name) {						
+	public void remove_contact(String name) {	
+		Memory.sms.remove_chat(name);
+		Memory.calendar.remove_all_meeting_of_contact(
+				Memory.phonebook.get_contact(name));
 		if(this.get_index_by_name(name)!=-1) {		//get_index_by_name return -1 if couldn't find match
 			phonebook.remove(this.get_index_by_name(name));
 		}
 		else {
 			System.out.println("there is no such contact");
 		}
+		
+//		Memory.calendar.reS
 	}
 	
 	//___________remove_contact___________

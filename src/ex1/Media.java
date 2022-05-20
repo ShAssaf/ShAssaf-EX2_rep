@@ -1,4 +1,4 @@
-package ex1;
+package Ex2;
 
 public class Media {
 	private int lenght_sec;

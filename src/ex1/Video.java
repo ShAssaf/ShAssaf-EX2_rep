@@ -1,4 +1,4 @@
-package ex1;
+package Ex2;
 
 public class Video extends Media {
 	public void MoviePlayer() {

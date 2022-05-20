@@ -1,4 +1,4 @@
-package ex1;
+package Ex2;
 
 import java.util.ArrayList;
 

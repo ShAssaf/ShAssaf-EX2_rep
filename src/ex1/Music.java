@@ -1,4 +1,4 @@
-package ex1;
+package Ex2;
 
 public class Music extends Media {
 		public void SongEditor() {
