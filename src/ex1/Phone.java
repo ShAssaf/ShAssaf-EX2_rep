@@ -1,8 +1,8 @@
 package ex1;
 
-public class Main {	
-		
-	public static void print_menu() {
+public class Phone implements App {
+	
+	public void print_menu() {
 		System.out.println("-----Phone------");
 		System.out.println("option:");
 		System.out.println("1 - PhoneBook");
@@ -12,12 +12,13 @@ public class Main {
 		System.out.println("5 - Exit");
 	}
 	
-	public static void main(String[] args) {
-
-		//variable
+	public void menu() {
+	
+	//	variable
 		String choice = new String();				//the choice that the user will make
 		PhoneBookApp phonebookApp = new PhoneBookApp();
 		SMSApp smsApp = new SMSApp();
+		CalendarApp calendar_app = new CalendarApp();
 		MediaPlayer mediaPlayer = new MediaPlayer();
 		//the Program
 		while(choice.compareTo("5") != 0) {		//compareTo return 0 if true
@@ -31,7 +32,7 @@ public class Main {
 					smsApp.menu();
 					break;
 				case("3"):		//Date
-					//Ariel
+					calendar_app.menu();
 					break;
 				case("4"):		//Media Player
 					mediaPlayer.menu();
@@ -45,6 +46,4 @@ public class Main {
 		}	
 		Memory.in.close();		//close the input.in at the end of the program!!!
 	}
-	
-	
 }

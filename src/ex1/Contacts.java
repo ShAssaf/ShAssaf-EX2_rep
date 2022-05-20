@@ -1,5 +1,8 @@
 package ex1;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+
 public class Contacts {
 	
 	//--------------Data Member--------------
@@ -7,6 +10,7 @@ public class Contacts {
 	//private String[] contact = new String[2];
 	private String name = new String();
 	private String phone_num = new String();
+	private ArrayList<Meeting> meetings = new ArrayList<Meeting>(); 
 	
 	//--------------Setters--------------
 	
@@ -26,6 +30,27 @@ public class Contacts {
 	
 	public String get_phone_num() {
 		return this.phone_num;
+	}
+
+	public ArrayList<Meeting> get_meetings() {
+		return this.meetings;
+	}
+	
+	//--------------Adders--------------
+	
+	public void add_meeting(Meeting meeting) {
+		this.get_meetings().add(meeting);
+		this.get_meetings().sort(Comparator.comparing(Meeting::get_date));
+	}
+
+	//--------------Printers--------------
+	
+	public void print_meetings() {
+		System.out.println("-------------------------");
+		for(Meeting meeting : this.get_meetings()) {
+			meeting.print();
+		}
+		System.out.println("-------------------------");
 	}
 	
 	//--------------Constructor--------------
