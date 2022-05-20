@@ -1,4 +1,4 @@
-package Ex2;
+package ex1;
 
 
 public class MediaPlayer implements App {
